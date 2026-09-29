@@ -1,8 +1,6 @@
 function isLeapYear(year) {
-  // Создаем дату: переданный год, месяц 2 (март), день 0 (последний день февраля)
   let date = new Date(year, 2, 0);
-  
-  // Если метод getDate() вернул 29, значит год високосный (вернет true, иначе false)
+
   return date.getDate() === 29;
 }
 
