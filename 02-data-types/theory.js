@@ -32,3 +32,10 @@ console.log("Время 03:14:08 -> Секунд в памяти:", memory32[0])
 // Выведет: -2147483648 !
 
 console.log('Иван сказал "Привет"'); // Результат: Иван сказал "Привет"
+
+let inputName;
+let username = inputName || "Аноним";
+// Если inputName пустой (false), запишется "Аноним"
+console.log(username);
+
+console.log(!!(5 == 7));
