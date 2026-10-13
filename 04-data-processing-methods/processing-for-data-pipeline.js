@@ -38,10 +38,16 @@ const warehouseGoods = [
 ];
 
 const totalCostOfElectronics = warehouseGoods
-  .filter(
-    (item) => item.category.toLowerCase() === "электроника" && item.isAvailable,
-  )
-  .map((item) => item.price * 0.9)
+  .filter((item) => {
+    const category = (item?.category ?? "").trim().toLowerCase();
+
+    const hasValidPrice = typeof item?.price === "number" && item.price > 0;
+
+    return category === "электроника" && item?.isAvailable && hasValidPrice;
+  })
+  .map((item) => {
+    return item.price * 0.9;
+  })
   .sort((a, b) => b - a)
   .reduce((total, price) => total + price, 0);
 
