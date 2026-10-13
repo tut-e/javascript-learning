@@ -12,15 +12,17 @@ const userProfile = {
   },
 };
 
-function flattenObject(obj) {
+function flattenObject(obj, prefix = "") {
   return Object.entries(obj).reduce((acc, [key, value]) => {
+    const newKey = prefix ? `${prefix}.${key}` : key;
+
     if (typeof value === "object" && value !== null && !Array.isArray(value)) {
-      const flatNested = flattenObject(value);
+      const flatNested = flattenObject(value, newKey);
 
       return { ...acc, ...flatNested };
     }
 
-    acc[key] = value;
+    acc[newKey] = value;
     return acc;
   }, {});
 }
