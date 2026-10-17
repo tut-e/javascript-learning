@@ -1,0 +1,22 @@
+/* Зачеркивание применяется к тексту */
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #888888;
+  opacity: 0.6;
+}
+
+/* Стили для кнопки, чтобы она визуально выделялась */
+.delete-btn {
+  margin-left: 15px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Обычный текст задачи */
+.todo-text {
+  cursor: pointer;
+}
