@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="orderForm" novalidate>
+        <h2>Оформление заказа</h2>
+
+        <!-- Поле: Имя -->
+        <div class="form-group">
+          <label for="userName">Имя получателя:</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            placeholder="Иван Петров"
+          />
+          <span class="error-msg" id="userNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="userPhone">Телефон (должен начинаться с +):</label>
+          <input
+            type="text"
+            id="userPhone"
+            name="userPhone"
+            placeholder="+7 (999) 123-45-67"
+          />
+          <span class="error-msg" id="userPhoneError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="deliveryMethod">Способ доставки:</label>
+          <select id="deliveryMethod" name="deliveryMethod">
+            <option value="">-- Выберите способ доставки --</option>
+            <option value="courier">Курьерская доставка</option>
+            <option value="pickup">Самовывоз из пункта</option>
+            <option value="post">Почта</option>
+          </select>
+          <span class="error-msg" id="deliveryMethodError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Комментарий к заказу (необязательно):</label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="3"
+            placeholder="Например: код домофона 42, оставить у двери..."
+          ></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="agree" name="agree" />
+            <span
+              >Я согласен с
+              <a href="#" target="_blank" class="form-link"
+                >условиями использования</a
+              >
+              и
+              <a href="#" target="_blank" class="form-link"
+                >политикой конфиденциальности</a
+              ></span
+            >
+          </label>
+          <span class="error-msg" id="agreeError"></span>
+        </div>
+
+        <button type="submit" id="submitBtn">Оформить заказ</button>
+      </form>
+    </div>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
