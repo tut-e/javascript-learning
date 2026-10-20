@@ -2,10 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-msedge",
+      "name": "Отладка в Firefox через Live Server",
+      "type": "firefox",
       "request": "launch",
-      "name": "Запустить форму в Edge",
-      "file": "${workspaceFolder}/index.html"
+      "reAttach": true,
+      "url": "http://127.0.0.1:5500",
+      "webRoot": "${workspaceFolder}",
+      "firefoxExecutable": "C:\\firefox.exe"
     }
   ]
 }
