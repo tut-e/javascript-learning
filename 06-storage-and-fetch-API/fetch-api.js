@@ -6,8 +6,11 @@ const newUser = {
 fetch("https://example.com", {
   method: "POST",
   headers: {
+    // 'Authorization': 'Bearer ВАШ_ТОКЕН',
+    Cookie: "sessionid=abc123xyz; theme=dark",
     "Content-Type": "application/json;charset=utf-8",
   },
+  credentials: "include",
   body: JSON.stringify(newUser),
 })
   .then((response) => {
